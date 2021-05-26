@@ -1,0 +1,21 @@
+### User sign up endpoint
+POST http://localhost:3001/v1/user
+Content-Type: application/json
+
+{
+    "name": "rames",
+    "company": "D Company ",
+    "address": "Oslo",
+    "phone": "245234232433",
+    "email": "rames@gmail.com",
+    "password": "ertsdfsdfe3442222"
+}
+
+### User sign in endpoint
+POST http://localhost:3001/v1/user/login
+Content-Type: application/json
+
+{
+    "email": "rames@gmail.com",
+    "password": "ertsdfsdfe3442222"
+}

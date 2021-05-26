@@ -7,7 +7,15 @@ const hashPassword = plainPassword => {
         resolve(bcrypt.hashSync(plainPassword, saltRounds))
     })
 }
-
+const comparePassword = (plainPassword, passFromDb) => {
+    return new Promise((resolve, reject) => {
+        bcrypt.compare(plainPassword, passFromDb, function(err, result) {
+            if (err) reject(error)
+            resolve(result)
+        })
+    })
+}
 module.exports = {
-    hashPassword
+    hashPassword,
+    comparePassword
 }
