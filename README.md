@@ -34,3 +34,10 @@ ALl the user API router follows `/v1/user/`
 |4  |`/v1/ticket{id}`                      |PUT   |    TODO      | Yes        | Update ticket detail ie. reply essage           |
 |4  |`/v1/ticket/close-ticket/{id}`        |PUT   |    TODO      | Yes        | Update ticket detail ie. reply essage           |
 
+### Token API Resources 
+
+ALl the tokens API router follows `/v1/tokens`
+
+|#  | Routers                              |Verbs |   Progress   | Is Private|            Description                           |
+|---|--------------------------------------|------|--------------|-----------|--------------------------------------------------|
+|1  |`/v1/tokens`                          |GET   |    DONE      | Yes       | Get a fresh access JWT                           |
