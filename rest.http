@@ -19,3 +19,8 @@ Content-Type: application/json
     "email": "rames@gmail.com",
     "password": "ertsdfsdfe3442222"
 }
+
+
+### Get a user profile endpoint
+GET  http://localhost:3001/v1/user/
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbWVzQGdtYWlsLmNvbSIsImlhdCI6MTYyMjEwNjkwOSwiZXhwIjoxNjIyMTA3ODA5fQ.UnoFLbnVWPexMXOowVF2j-DXCPkRukgRI0qcTQ7fDgA

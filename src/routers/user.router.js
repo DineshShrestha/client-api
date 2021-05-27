@@ -1,17 +1,27 @@
 const express = require("express");
 const { route } = require("./ticket.router")
 const router = express.Router();
-const { insertUser, getUserByEmail } = require('../model/user/User.model')
+const { insertUser, getUserByEmail, getUserById } = require('../model/user/User.model')
 const { hashPassword, comparePassword } = require("../helpers/bcrypt.helper")
 const { createAccessJWT, createRefreshJWT } = require("../helpers/jwt.helper")
-const { json } = require("body-parser");
+const { userAuthorization } = require('../middlewares/authorization.middleware')
 
 router.all('/', (req, res, next) => {
     //res.json({ message: "return form user router" })
     next()
 });
+//Get user profile router
+router.get("/", userAuthorization, async(req, res) => {
+        //this is coming from database
+        //2. check if jwt exist in redis
+        const _id = req.userId
 
-//Create new user route
+        const userprof = await getUserById(_id)
+            //3. extract user id
+            //4. get user profile based on the user id
+        res.json({ user: userprof })
+    })
+    //Create new user route
 router.post("/", async(req, res) => {
     const { name, company, address, phone, email, password } = req.body
     try {
@@ -63,4 +73,6 @@ router.post("/login", async(req, res) => {
     const refreshJWT = await createRefreshJWT(user.email, `${user._id}`)
     res.json({ status: "success", message: "Login Successfully!!", accessJWT, refreshJWT })
 })
+
+
 module.exports = router;
