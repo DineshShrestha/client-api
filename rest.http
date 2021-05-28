@@ -31,3 +31,14 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbWVzQGdtYWls
 ### Get refreshed token
 GET http://localhost:3001/v1/tokens
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbWVzQGdtYWlsLmNvbSIsImlhdCI6MTYyMjEwOTUzMywiZXhwIjoxNjI0NzAxNTMzfQ.jcWFl9KuNNe8RhqkWimg6HXO0nIq2cwaIcH1aR26yfw
+# eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbWVzQGdtYWlsLmNvbSIsImlhdCI6MTYyMjEwOTUzMywiZXhwIjoxNjI0NzAxNTMzfQ.jcWFl9KuNNe8RhqkWimg6HXO0nIq2cwaIcH1aR26yfw
+
+### Password reset endpoints
+POST http://localhost:3001/v1/user/reset-password
+Content-Type: application/json
+
+{
+    "email": "rames@gmail.com"
+
+}   
+
