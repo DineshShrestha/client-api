@@ -7,6 +7,10 @@ const { createAccessJWT, createRefreshJWT } = require("../helpers/jwt.helper")
 const { userAuthorization } = require('../middlewares/authorization.middleware')
 const { setPasswordResetPin, getPinByEmailPin, deletePin } = require('../model/resetPin/ResetPin.model');
 const { emailProcessor } = require("../helpers/email.helper");
+
+const { resetPassReqValidation, updatePassReqValidation } = require("../middlewares/formValidation.middleware")
+
+
 router.all('/', (req, res, next) => {
     //res.json({ message: "return form user router" })
     next()
@@ -81,7 +85,7 @@ router.post("/login", async(req, res) => {
 //3. create unique 6 digit pin
 //4. save pin and email in database
 //5. send email notification
-router.post("/reset-password", async(req, res) => {
+router.post("/reset-password", resetPassReqValidation, async(req, res) => {
     const { email } = req.body
     const user = await getUserByEmail(email)
     if (user && user._id) {
@@ -97,17 +101,12 @@ router.post("/reset-password", async(req, res) => {
 })
 
 
-//B. Update password in DB
-
-
-
-//4.update password in db
 
 
 //C. Server side form validation
 //1. Create middlewarae to validate form db
 
-router.patch("/reset-password", async(req, res) => {
+router.patch("/reset-password", updatePassReqValidation, async(req, res) => {
     //1.receive email, pin and new password
     const { email, pin, newPassword } = req.body
     const getPin = await getPinByEmailPin(email, pin)
