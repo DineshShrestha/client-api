@@ -17,7 +17,7 @@ Content-Type: application/json
 
 {
     "email": "rames@gmail.com",
-    "password": "secret123"
+    "password": "pasord13"
 }
 
 
@@ -54,4 +54,10 @@ Content-Type: application/json
     "newPassword":"pasord13"
 
 } 
+
+
+### user logout endpoint
+DELETE  http://localhost:3001/v1/user/logout
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbWVzQGdtYWlsLmNvbSIsImlhdCI6MTYyMjIxMTE0NywiZXhwIjoxNjIyMjEyOTQ3fQ.TzY7PT1GidQMW6iB5-XLefmI0xwV5UDaK_oDkCRtJ08
+
 

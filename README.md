@@ -17,10 +17,13 @@ ALl the user API router follows `/v1/user/`
 
 |#  | Routers                              |Verbs |   Progress   | Is Private|            Description                           |
 |---|--------------------------------------|------|--------------|-----------|--------------------------------------------------|
-|1  |`/v1/user/login`                      |POST  |    DONE      | No        | Verify user Authentication and return JWT        |
-|2  |`/v1/user/reset-password`             |POST  |    DONE      | No        | Verify email and email pin to reset the password |
-|3  |`/v1/user/reset-password`             |PATCH |    TODO      | No        | Replace with new                                 |
-|4  |`/v1/user/{id}`                       |GET   |     TODO     | Yes       | Get users Info                                   |
+|1  |`/v1/user`                            |GET   |    DONE      | Yes       | Get user Info                                    |
+|1  |`/v1/user`                            |POST  |    DONE      | No        | Create a user                                    |
+|2  |`/v1/user/login`                      |POST  |    DONE      | No        | Verify user Authentication and return JWT        |
+|3  |`/v1/user/reset-password`             |POST  |    DONE      | No        | Verify email and email pin to reset the password |
+|4  |`/v1/user/reset-password`             |PATCH |    DONE      | No        | Replace with new                                 |
+|1  |`/v1/user/logout`                     |Delete|    TODO      | Yes       | Delete user accessJWT                            |
+
 
 ### Ticket API Resources 
 

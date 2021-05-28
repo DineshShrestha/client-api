@@ -1,7 +1,7 @@
 const express = require("express");
 const { route } = require("./ticket.router")
 const router = express.Router();
-const { insertUser, getUserByEmail, getUserById, updatePassword } = require('../model/user/User.model')
+const { insertUser, getUserByEmail, getUserById, updatePassword, storeUserRefreshJWT } = require('../model/user/User.model')
 const { hashPassword, comparePassword } = require("../helpers/bcrypt.helper")
 const { createAccessJWT, createRefreshJWT } = require("../helpers/jwt.helper")
 const { userAuthorization } = require('../middlewares/authorization.middleware')
@@ -9,7 +9,7 @@ const { setPasswordResetPin, getPinByEmailPin, deletePin } = require('../model/r
 const { emailProcessor } = require("../helpers/email.helper");
 
 const { resetPassReqValidation, updatePassReqValidation } = require("../middlewares/formValidation.middleware")
-
+const { deleteJWT } = require("../helpers/redis.helper")
 
 router.all('/', (req, res, next) => {
     //res.json({ message: "return form user router" })
@@ -100,9 +100,6 @@ router.post("/reset-password", resetPassReqValidation, async(req, res) => {
     res.json({ status: "error", message: "If the email exists in our database the password reset pin will be sent shortly." })
 })
 
-
-
-
 //C. Server side form validation
 //1. Create middlewarae to validate form db
 
@@ -140,4 +137,26 @@ router.patch("/reset-password", updatePassReqValidation, async(req, res) => {
     }
     res.json({ status: 'error', message: "unable to update your password. Please try again" })
 })
+
+//user logout and invalidate jwts
+//1. get jwt and verify
+
+//3. delete refreshJWT from mongodb
+
+router.delete("/logout", userAuthorization, async(req, res) => {
+    const { authorization } = req.headers
+    const _id = req.userId
+
+
+    //2. delete accessJWT from redis database
+    deleteJWT(authorization)
+
+    //3. delete refreshJWT from mongodb
+    const result = await storeUserRefreshJWT(_id, '')
+    if (result._id) {
+        return res.json({ status: 'success', message: "logged out successfully" })
+    }
+    res.json({ status: 'error', message: "unable to logout.Please try again later" })
+})
+
 module.exports = router;
