@@ -5,7 +5,8 @@ const { insertUser, getUserByEmail, getUserById } = require('../model/user/User.
 const { hashPassword, comparePassword } = require("../helpers/bcrypt.helper")
 const { createAccessJWT, createRefreshJWT } = require("../helpers/jwt.helper")
 const { userAuthorization } = require('../middlewares/authorization.middleware')
-const { setPasswordResetPin } = require('../model/resetPin/ResetPin.model')
+const { setPasswordResetPin } = require('../model/resetPin/ResetPin.model');
+const { emailProcessor } = require("../helpers/email.helper");
 router.all('/', (req, res, next) => {
     //res.json({ message: "return form user router" })
     next()
@@ -95,7 +96,14 @@ router.post("/reset-password", async(req, res) => {
     if (user && user._id) {
         /// create unique 6 digit pin
         const setPin = await setPasswordResetPin(email)
-        return res.json(setPin)
+
+        const result = await emailProcessor(email, setPin.pin)
+
+        if (result && result.messageId) {
+
+            return res.json({ status: "success", message: "If the email exists in our database the password reset pin will be sent shortly." })
+        }
+        return res.json({ status: "success", message: "Unable to send the message. Please try again later" })
 
     }
     res.json({ status: "error", message: "If the email exists in our database the password reset pin will be sent shortly." })
