@@ -17,7 +17,7 @@ Content-Type: application/json
 
 {
     "email": "rames@gmail.com",
-    "password": "ertsdfsdfe3442222"
+    "password": "secret123"
 }
 
 
@@ -33,7 +33,7 @@ GET http://localhost:3001/v1/tokens
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbWVzQGdtYWlsLmNvbSIsImlhdCI6MTYyMjEwOTUzMywiZXhwIjoxNjI0NzAxNTMzfQ.jcWFl9KuNNe8RhqkWimg6HXO0nIq2cwaIcH1aR26yfw
 # eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbWVzQGdtYWlsLmNvbSIsImlhdCI6MTYyMjEwOTUzMywiZXhwIjoxNjI0NzAxNTMzfQ.jcWFl9KuNNe8RhqkWimg6HXO0nIq2cwaIcH1aR26yfw
 
-### Password reset endpoints
+### Password reset request endpoints
 POST http://localhost:3001/v1/user/reset-password
 Content-Type: application/json
 
@@ -41,4 +41,17 @@ Content-Type: application/json
     "email": "rames@gmail.com"
 
 }   
+
+
+
+### Update new password and endpoint
+PATCH  http://localhost:3001/v1/user/reset-password
+Content-Type: application/json
+
+{
+    "email": "rames@gmail.com",
+    "pin":   765784,
+    "newPassword":"password132"
+
+} 
 
