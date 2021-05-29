@@ -22,7 +22,7 @@ ALl the user API router follows `/v1/user/`
 |2  |`/v1/user/login`                      |POST  |    DONE      | No        | Verify user Authentication and return JWT        |
 |3  |`/v1/user/reset-password`             |POST  |    DONE      | No        | Verify email and email pin to reset the password |
 |4  |`/v1/user/reset-password`             |PATCH |    DONE      | No        | Replace with new                                 |
-|1  |`/v1/user/logout`                     |Delete|    TODO      | Yes       | Delete user accessJWT                            |
+|1  |`/v1/user/logout`                     |Delete|    DONE      | Yes       | Delete user accessJWT                            |
 
 
 ### Ticket API Resources 
@@ -35,7 +35,8 @@ ALl the user API router follows `/v1/user/`
 |2  |`/v1/ticket/{id}`                     |GET   |    TODO      | Yes        | Get ticket details                              |
 |3  |`/v1/ticket`                          |POST  |    TODO      | Yes        | Create a new ticket                             |
 |4  |`/v1/ticket{id}`                      |PUT   |    TODO      | Yes        | Update ticket detail ie. reply essage           |
-|4  |`/v1/ticket/close-ticket/{id}`        |PUT   |    TODO      | Yes        | Update ticket detail ie. reply essage           |
+|4  |`/v1/ticket/close-ticket/{id}`        |PATCH |    TODO      | Yes        | Update ticket status to close                   |
+|4  |`/v1/ticket/{id}`              |PATCH |    TODO      | Yes        | Delete a ticket                                 |
 
 ### Token API Resources 
 
