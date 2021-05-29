@@ -31,12 +31,12 @@ ALl the user API router follows `/v1/user/`
 
 |#  | Routers                              |Verbs |   Progress   | Is Private|            Description                           |
 |---|--------------------------------------|------|--------------|-----------|--------------------------------------------------|
-|1  |`/v1/ticket`                          |GET   |    TODO      | Yes        | Get all ticket for the logined user             |
-|2  |`/v1/ticket/{id}`                     |GET   |    TODO      | Yes        | Get ticket details                              |
-|3  |`/v1/ticket`                          |POST  |    TODO      | Yes        | Create a new ticket                             |
-|4  |`/v1/ticket{id}`                      |PUT   |    TODO      | Yes        | Update ticket detail ie. reply essage           |
-|4  |`/v1/ticket/close-ticket/{id}`        |PATCH |    TODO      | Yes        | Update ticket status to close                   |
-|4  |`/v1/ticket/{id}`              |PATCH |    TODO      | Yes        | Delete a ticket                                 |
+|1  |`/v1/ticket`                          |GET   |    DONE      | Yes        | Get all ticket for the logined user             |
+|2  |`/v1/ticket/{id}`                     |GET   |    DONE      | Yes        | Get ticket details                              |
+|3  |`/v1/ticket`                          |POST  |    DONE      | Yes        | Create a new ticket                             |
+|4  |`/v1/ticket{id}`                      |PUT   |    DONE      | Yes        | Update ticket detail ie. reply essage           |
+|4  |`/v1/ticket/close-ticket/{id}`        |PATCH |    DONE      | Yes        | Update ticket status to close                   |
+|4  |`/v1/ticket/{id}`                     |PATCH |    TODO      | Yes        | Delete a ticket                                 |
 
 ### Token API Resources 
 
