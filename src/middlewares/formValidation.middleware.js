@@ -8,10 +8,11 @@ const email = Joi.string()
 const pin = Joi.number().min(100000).max(999999).required()
 
 
-const newPassword = Joi.string().alphanum()
-    .min(3)
-    .max(30)
-    .required()
+const newPassword = Joi.string().alphanum().min(3).max(30).required()
+
+const longStr = Joi.string().min(2).max(1000)
+const shortStr = Joi.string().min(2).max(50)
+
 
 
 const resetPassReqValidation = (req, res, next) => {
@@ -34,7 +35,42 @@ const updatePassReqValidation = (req, res, next) => {
     }
     next()
 }
+
+const createNewticketValidation = (req, res, next) => {
+    const schema = Joi.object({
+        subject: shortStr.required(),
+        sender: shortStr,
+        message: longStr
+    })
+
+    const value = schema.validate(req.body)
+
+
+    if (value.error) {
+        return res.json({ status: 'error', message: value.error.message })
+    }
+    next()
+}
+
+const replyTicketMessageValidation = (req, res, next) => {
+    const schema = Joi.object({
+
+        sender: shortStr.required(),
+        message: longStr.required()
+    })
+
+    const value = schema.validate(req.body)
+    if (value.error) {
+        console.log(value.error)
+        return res.json({ status: 'error', message: value.error.message })
+    }
+    next()
+}
+
+
 module.exports = {
     resetPassReqValidation,
-    updatePassReqValidation
+    updatePassReqValidation,
+    createNewticketValidation,
+    replyTicketMessageValidation
 }
