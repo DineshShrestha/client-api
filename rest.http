@@ -17,7 +17,7 @@ Content-Type: application/json
 
 {
     "email": "rames@gmail.com",
-    "password": "pasord13"
+    "password": "pasord123"
 }
 
 
@@ -58,6 +58,44 @@ Content-Type: application/json
 
 ### user logout endpoint
 DELETE  http://localhost:3001/v1/user/logout
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbWVzQGdtYWlsLmNvbSIsImlhdCI6MTYyMjIxMTE0NywiZXhwIjoxNjIyMjEyOTQ3fQ.TzY7PT1GidQMW6iB5-XLefmI0xwV5UDaK_oDkCRtJ08
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbWVzQGdtYWlsLmNvbSIsImlhdCI6MTYyMjY2NDkyNSwiZXhwIjoxNjIyNjY3OTI1fQ.e-WUc2DEffAC73CvNEiP2riRieAsU9L6F83hrQYqO80
+
+### Ticket apis
+
+### Open new ticket
+
+POST http://localhost:3001/v1/ticket
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbWVzQGdtYWlsLmNvbSIsImlhdCI6MTYyMjY2NTAwNiwiZXhwIjoxNjIyNjY4MDA2fQ.JAUAR8rnaKec2j8UuIPi0tTKHL-z6ubIpW1ImmgpwmE
+Content-Type: application/json
+{
+    "subject": "Form issue",
+    "sender":"Dnes",
+    "message": "1 contact form not working. Please fix it as soon as possible"
+}
+
+### Get all the tickets
+
+GET http://localhost:3001/v1/ticket
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbWVzQGdtYWlsLmNvbSIsImlhdCI6MTYyMjY2NTAwNiwiZXhwIjoxNjIyNjY4MDA2fQ.JAUAR8rnaKec2j8UuIPi0tTKHL-z6ubIpW1ImmgpwmE
+
+### Get single ticket
+GET http://localhost:3001/v1/ticket/60aeaedde8e4af39fc1d77b5
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbWVzQGdtYWlsLmNvbSIsImlhdCI6MTYyMjY2NTAwNiwiZXhwIjoxNjIyNjY4MDA2fQ.JAUAR8rnaKec2j8UuIPi0tTKHL-z6ubIpW1ImmgpwmE
 
 
+### Reply message to the ticket
+PUT http://localhost:3001/v1/ticket/60aeaedde8e4af39fc1d77b5
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbWVzQGdtYWlsLmNvbSIsImlhdCI6MTYyMjY2NTAwNiwiZXhwIjoxNjIyNjY4MDA2fQ.JAUAR8rnaKec2j8UuIPi0tTKHL-z6ubIpW1ImmgpwmE
+Content-Type: application/json
+{
+    "message": "this is the 222 reply",
+    "sender":"Dnes"
+}
+
+### Close the ticket
+PATCH http://localhost:3001/v1/ticket/close-ticket/60aeaedde8e4af39fc1d77b5
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbWVzQGdtYWlsLmNvbSIsImlhdCI6MTYyMjY2NTAwNiwiZXhwIjoxNjIyNjY4MDA2fQ.JAUAR8rnaKec2j8UuIPi0tTKHL-z6ubIpW1ImmgpwmE
+
+### Delete the ticket
+DELETE  http://localhost:3001/v1/ticket/60aeaedde8e4af39fc1d77b5
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbWVzQGdtYWlsLmNvbSIsImlhdCI6MTYyMjY2NTAwNiwiZXhwIjoxNjIyNjY4MDA2fQ.JAUAR8rnaKec2j8UuIPi0tTKHL-z6ubIpW1ImmgpwmE
