@@ -21,10 +21,17 @@ router.get("/", userAuthorization, async(req, res) => {
         //2. check if jwt exist in redis
         const _id = req.userId
 
-        const userprof = await getUserById(_id)
+        const userProf = await getUserById(_id)
             //3. extract user id
             //4. get user profile based on the user id
-        res.json({ user: userprof })
+        const { name, email } = userProf
+        res.json({
+            user: {
+                _id,
+                name,
+                email
+            }
+        })
     })
     //Create new user route
 router.post("/", async(req, res) => {

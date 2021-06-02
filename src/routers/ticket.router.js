@@ -4,7 +4,8 @@ const { insertTicket, getTickets, getTicketById, updateClientReply, updateStatus
 const { userAuthorization } = require("../middlewares/authorization.middleware")
 
 
-const { createNewticketValidation, replyTicketMessageValidation } = require('../middlewares/formValidation.middleware')
+const { createNewticketValidation, replyTicketMessageValidation } = require('../middlewares/formValidation.middleware');
+const { getUserById } = require("../model/user/User.model");
 
 
 
@@ -131,9 +132,6 @@ router.patch("/close-ticket/:_id", userAuthorization, async(req, res) => {
         res.json({ status: "error", message: error.message });
     }
 });
-
-
-
 
 // delete ticket from mongodb
 router.delete("/:_id", userAuthorization, async(req, res) => {

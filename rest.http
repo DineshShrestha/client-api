@@ -50,8 +50,8 @@ Content-Type: application/json
 
 {
     "email": "rames@gmail.com",
-    "pin":519157,
-    "newPassword":"pasord13"
+    "pin":482543,
+    "newPassword":"pasord123"
 
 } 
 
