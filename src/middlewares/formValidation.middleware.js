@@ -12,6 +12,7 @@ const newPassword = Joi.string().alphanum().min(3).max(30).required()
 
 const longStr = Joi.string().min(2).max(1000)
 const shortStr = Joi.string().min(2).max(50)
+const dt = Joi.date()
 
 
 
@@ -39,8 +40,9 @@ const updatePassReqValidation = (req, res, next) => {
 const createNewticketValidation = (req, res, next) => {
     const schema = Joi.object({
         subject: shortStr.required(),
-        sender: shortStr,
-        message: longStr
+        sender: shortStr.required(),
+        message: longStr.required(),
+        issueDate: dt.required()
     })
 
     const value = schema.validate(req.body)

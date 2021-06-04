@@ -63,14 +63,22 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbWVzQGdtYWls
 
 ### Open new ticket
 POST http://localhost:3001/v1/ticket
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbWVzQGdtYWlsLmNvbSIsImlhdCI6MTYyMjcyMjg3MywiZXhwIjoxNjIyNzI1ODczfQ.mzMEpWbGveq06a3ePCXLZFXQCUmY136x-bJO08B1-xk
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbWVzQGdtYWlsLmNvbSIsImlhdCI6MTYyMjc5NzYyNywiZXhwIjoxNjIyODAwNjI3fQ.DUQIWqhet7ej_a8t_N8YAFKU7UhaeoIq0sGRCxLptdY
+Content-Type: application/json
+{
+    "subject":"Form issue",
+    "sender":"Dinesh",
+    "message":"1 contact form is not working. Please fix asap."
+
+}
+
 ### Get single ticket
 GET http://localhost:3001/v1/ticket/60aeaedde8e4af39fc1d77b5
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbWVzQGdtYWlsLmNvbSIsImlhdCI6MTYyMjcyMjg3MywiZXhwIjoxNjIyNzI1ODczfQ.mzMEpWbGveq06a3ePCXLZFXQCUmY136x-bJO08B1-xk
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbWVzQGdtYWlsLmNvbSIsImlhdCI6MTYyMjc5NzYyNywiZXhwIjoxNjIyODAwNjI3fQ.DUQIWqhet7ej_a8t_N8YAFKU7UhaeoIq0sGRCxLptdY
 
 
 ### Reply message to the ticket
-PUT http://localhost:3001/v1/ticket/60aeaedde8e4af39fc1d77b5
+PUT http://localhost:3001/v1/ticket/60b9edfcac2edd3d34bdf45d
 Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbWVzQGdtYWlsLmNvbSIsImlhdCI6MTYyMjcyMjg3MywiZXhwIjoxNjIyNzI1ODczfQ.mzMEpWbGveq06a3ePCXLZFXQCUmY136x-bJO08B1-xk
 Content-Type: application/json
 {
@@ -79,9 +87,9 @@ Content-Type: application/json
 }
 
 ### Close the ticket
-PATCH http://localhost:3001/v1/ticket/close-ticket/60aeaedde8e4af39fc1d77b5
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbWVzQGdtYWlsLmNvbSIsImlhdCI6MTYyMjcyMjkxOCwiZXhwIjoxNjIyNzI1OTE4fQ.rJt5lh7VD-iVGJ1AREG1KKgX-me4MCk3Q4jZecOUKCs
+PATCH http://localhost:3001/v1/ticket/close-ticket/60b9edfcac2edd3d34bdf45d
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbWVzQGdtYWlsLmNvbSIsImlhdCI6MTYyMjc5NzYyNywiZXhwIjoxNjIyODAwNjI3fQ.DUQIWqhet7ej_a8t_N8YAFKU7UhaeoIq0sGRCxLptdY
 
 ### Delete the ticket
-DELETE  http://localhost:3001/v1/ticket/60aeaedde8e4af39fc1d77b5
-Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbWVzQGdtYWlsLmNvbSIsImlhdCI6MTYyMjcyMjkxOCwiZXhwIjoxNjIyNzI1OTE4fQ.rJt5lh7VD-iVGJ1AREG1KKgX-me4MCk3Q4jZecOUKCs
+DELETE  http://localhost:3001/v1/ticket/60b23f4ceb4d784470114429
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbWVzQGdtYWlsLmNvbSIsImlhdCI6MTYyMjc5NzYyNywiZXhwIjoxNjIyODAwNjI3fQ.DUQIWqhet7ej_a8t_N8YAFKU7UhaeoIq0sGRCxLptdY
