@@ -23,14 +23,13 @@ Content-Type: application/json
 
 ### Get a user profile endpoint
 GET  http://localhost:3001/v1/user/
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbWVzQGdtYWlsLmNvbSIsImlhdCI6MTYyMjEwODEzOCwiZXhwIjoxNjIyMTA5MDM4fQ.hc6teWcLPl0bvzdGlPGDVxLbdnor1PA4YC9hESbhcmw
-
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbWVzQGdtYWlsLmNvbSIsImlhdCI6MTYyMjcyMjg3MywiZXhwIjoxNjIyNzI1ODczfQ.mzMEpWbGveq06a3ePCXLZFXQCUmY136x-bJO08B1-xk
 
 ### Token routers
 
 ### Get refreshed token
 GET http://localhost:3001/v1/tokens
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbWVzQGdtYWlsLmNvbSIsImlhdCI6MTYyMjEwOTUzMywiZXhwIjoxNjI0NzAxNTMzfQ.jcWFl9KuNNe8RhqkWimg6HXO0nIq2cwaIcH1aR26yfw
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbWVzQGdtYWlsLmNvbSIsImlhdCI6MTYyMjcyMjg3MywiZXhwIjoxNjI1MzE0ODczfQ.n7u5lUOQKjvRU0TpNntyCqo-rFWP5s-t7IIj-d5R-IM
 # eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbWVzQGdtYWlsLmNvbSIsImlhdCI6MTYyMjEwOTUzMywiZXhwIjoxNjI0NzAxNTMzfQ.jcWFl9KuNNe8RhqkWimg6HXO0nIq2cwaIcH1aR26yfw
 
 ### Password reset request endpoints
@@ -58,44 +57,31 @@ Content-Type: application/json
 
 ### user logout endpoint
 DELETE  http://localhost:3001/v1/user/logout
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbWVzQGdtYWlsLmNvbSIsImlhdCI6MTYyMjY2NDkyNSwiZXhwIjoxNjIyNjY3OTI1fQ.e-WUc2DEffAC73CvNEiP2riRieAsU9L6F83hrQYqO80
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbWVzQGdtYWlsLmNvbSIsImlhdCI6MTYyMjcyMjkxOCwiZXhwIjoxNjIyNzI1OTE4fQ.rJt5lh7VD-iVGJ1AREG1KKgX-me4MCk3Q4jZecOUKCs
 
 ### Ticket apis
 
 ### Open new ticket
-
 POST http://localhost:3001/v1/ticket
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbWVzQGdtYWlsLmNvbSIsImlhdCI6MTYyMjY2NTAwNiwiZXhwIjoxNjIyNjY4MDA2fQ.JAUAR8rnaKec2j8UuIPi0tTKHL-z6ubIpW1ImmgpwmE
-Content-Type: application/json
-{
-    "subject": "Form issue",
-    "sender":"Dnes",
-    "message": "1 contact form not working. Please fix it as soon as possible"
-}
-
-### Get all the tickets
-
-GET http://localhost:3001/v1/ticket
-Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbWVzQGdtYWlsLmNvbSIsImlhdCI6MTYyMjY2NTAwNiwiZXhwIjoxNjIyNjY4MDA2fQ.JAUAR8rnaKec2j8UuIPi0tTKHL-z6ubIpW1ImmgpwmE
-
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbWVzQGdtYWlsLmNvbSIsImlhdCI6MTYyMjcyMjg3MywiZXhwIjoxNjIyNzI1ODczfQ.mzMEpWbGveq06a3ePCXLZFXQCUmY136x-bJO08B1-xk
 ### Get single ticket
 GET http://localhost:3001/v1/ticket/60aeaedde8e4af39fc1d77b5
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbWVzQGdtYWlsLmNvbSIsImlhdCI6MTYyMjY2NTAwNiwiZXhwIjoxNjIyNjY4MDA2fQ.JAUAR8rnaKec2j8UuIPi0tTKHL-z6ubIpW1ImmgpwmE
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbWVzQGdtYWlsLmNvbSIsImlhdCI6MTYyMjcyMjg3MywiZXhwIjoxNjIyNzI1ODczfQ.mzMEpWbGveq06a3ePCXLZFXQCUmY136x-bJO08B1-xk
 
 
 ### Reply message to the ticket
 PUT http://localhost:3001/v1/ticket/60aeaedde8e4af39fc1d77b5
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbWVzQGdtYWlsLmNvbSIsImlhdCI6MTYyMjY2NTAwNiwiZXhwIjoxNjIyNjY4MDA2fQ.JAUAR8rnaKec2j8UuIPi0tTKHL-z6ubIpW1ImmgpwmE
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbWVzQGdtYWlsLmNvbSIsImlhdCI6MTYyMjcyMjg3MywiZXhwIjoxNjIyNzI1ODczfQ.mzMEpWbGveq06a3ePCXLZFXQCUmY136x-bJO08B1-xk
 Content-Type: application/json
 {
-    "message": "this is the 222 reply",
-    "sender":"Dnes"
+    "message": "this is the 333 reply",
+    "sender":"Gopal"
 }
 
 ### Close the ticket
 PATCH http://localhost:3001/v1/ticket/close-ticket/60aeaedde8e4af39fc1d77b5
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbWVzQGdtYWlsLmNvbSIsImlhdCI6MTYyMjY2NTAwNiwiZXhwIjoxNjIyNjY4MDA2fQ.JAUAR8rnaKec2j8UuIPi0tTKHL-z6ubIpW1ImmgpwmE
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbWVzQGdtYWlsLmNvbSIsImlhdCI6MTYyMjcyMjkxOCwiZXhwIjoxNjIyNzI1OTE4fQ.rJt5lh7VD-iVGJ1AREG1KKgX-me4MCk3Q4jZecOUKCs
 
 ### Delete the ticket
 DELETE  http://localhost:3001/v1/ticket/60aeaedde8e4af39fc1d77b5
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbWVzQGdtYWlsLmNvbSIsImlhdCI6MTYyMjY2NTAwNiwiZXhwIjoxNjIyNjY4MDA2fQ.JAUAR8rnaKec2j8UuIPi0tTKHL-z6ubIpW1ImmgpwmE
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbWVzQGdtYWlsLmNvbSIsImlhdCI6MTYyMjcyMjkxOCwiZXhwIjoxNjIyNzI1OTE4fQ.rJt5lh7VD-iVGJ1AREG1KKgX-me4MCk3Q4jZecOUKCs
